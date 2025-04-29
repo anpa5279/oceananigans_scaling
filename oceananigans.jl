@@ -158,11 +158,16 @@ end
 
 add_callback!(simulation, progress, name=:progress, IterationInterval(20))
 setup_end = time()
+# MPI.Barrier()
 start1 = time()
 run!(simulation)
 end1 = time()
-@show setup_end - setup_start
-@show start1
-@show end1
-@show end1 - start1
-@show simulation.model.clock.iteration
+if rank == 0
+    @show setup_end - setup_start
+    @show start1
+    @show end1
+    @show end1 - start1
+    @show simulation.model.clock.iteration
+end
+
+MPI.Finalize()
