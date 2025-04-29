@@ -90,7 +90,7 @@ u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
 
 buoyancy = SeawaterBuoyancy(equation_of_state=LinearEquationOfState(thermal_expansion = 2e-4), constant_salinity = 35.0)
 @show buoyancy
-T_bcs = FieldBoundaryConditions(top = GradientBoundaryCondition(0.0), #FluxBoundaryCondition(p.Q / (p.cᴾ * p.ρₒ * p.Lx * p.Ly)),
+T_bcs = FieldBoundaryConditions(top = GradientBoundaryCondition(0.0),
                                 bottom = GradientBoundaryCondition(p.dTdz))
 coriolis = FPlane(f=1e-4) # s⁻¹
 
@@ -145,7 +145,7 @@ output_interval = 10minutes
 
 fields_to_output = merge(model.velocities, model.tracers)
 
-simulation.output_writers[:fields] = JLD2OutputWriter(model, fields_to_output,
+simulation.output_writers[:fields] = JLD2Writer(model, fields_to_output,
                                                       schedule = TimeInterval(output_interval),
                                                       filename = "scaling_test_fields_$(rank).jld2",
                                                       overwrite_existing = true,
