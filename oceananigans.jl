@@ -11,7 +11,7 @@ using Oceananigans.DistributedComputations
 using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
 
-start1 = time()
+setup_start = time()
 mutable struct Params
     Nx::Int         # number of points in each of x direction
     Ny::Int         # number of points in each of y direction
@@ -121,21 +121,6 @@ set!(model, u=uᵢ, w=wᵢ, T=Tᵢ)
 simulation = Simulation(model, Δt=30.0, stop_time = 4hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
-function progress(sim)
-    elapsed = 1e-9 * (time_ns() - wall_clock[])
-
-    msg = @sprintf("iteration: %d, time: %s, wall time: %s, max|w|: %6.3e, m s⁻¹\n",
-                   iteration(sim), prettytime(sim), prettytime(elapsed),
-                   maximum(abs, sim.model.velocities.w))
-
-    wall_clock[] = time_ns()
-
-    @info msg
-
-    return nothing
-end
-
-add_callback!(simulation, progress, name=:progress, IterationInterval(20))
 
 conjure_time_step_wizard!(simulation, cfl=0.5, max_Δt=30seconds)
 
@@ -156,10 +141,27 @@ simulation.output_writers[:fields] = JLD2Writer(model, fields_to_output,
                                                       filename = "scaling_test_fields_$(rank).jld2",
                                                       overwrite_existing = true,
                                                       init = save_IC!)
+wall_clock = Ref(time_ns())
+function progress(sim)
+    elapsed = 1e-9 * (time_ns() - wall_clock[])
 
+    msg = @sprintf("iteration: %d, time: %s, wall time: %s, max|w|: %6.3e, m s⁻¹\n",
+                   iteration(sim), prettytime(sim), prettytime(elapsed),
+                   maximum(abs, sim.model.velocities.w))
+
+    wall_clock[] = time_ns()
+
+    @info msg
+
+    return nothing
+end
+
+add_callback!(simulation, progress, name=:progress, IterationInterval(20))
+setup_end = time()
+start1 = time()
 run!(simulation)
-
 end1 = time()
+@show setup_end - setup_start
 @show start1
 @show end1
 @show end1 - start1
