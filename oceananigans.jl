@@ -1,14 +1,17 @@
 using Pkg
 using MPI
+
+MPI.Init()
+
 using CUDA
 using Statistics
 using Printf
 using Oceananigans
 using Oceananigans.DistributedComputations
+using Oceananigans.Architectures: Distributed, Architecture
 using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
 
-MPI.Init()
 start1 = time()
 mutable struct Params
     Nx::Int         # number of points in each of x direction
@@ -31,13 +34,15 @@ end
 
 #defaults, these can be changed directly below 128, 128, 160, 320.0, 320.0, 96.0
 p = Params(32, 32, 32, 320.0, 320.0, 96.0, 5.3e-9, 33.0, 0.0, 4200.0, 1000.0, 0.01, 17.0, 2.0e-4, 5.75, 0.3)
+# Determine architecture based on number of MPI ranks
+Nranks = MPI.Comm_size(MPI.COMM_WORLD)
+arch = Nranks > 1 ? Distributed(GPU()) : GPU()
 
-# Automatically distribute among available processors
-arch = GPU()
-@show arch
-rank = arch.local_rank
-Nranks = MPI.Comm_size(arch.communicator)
-println("Hello from process $(rank) out of $Nranks")
+# Determine rank safely depending on architecture
+rank = arch isa Distributed ? arch.local_rank : 0
+Nranks = arch isa Distributed ? MPI.Comm_size(arch.communicator) : 1
+
+println("Hello from process $rank out of $Nranks")
 
 grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
 
