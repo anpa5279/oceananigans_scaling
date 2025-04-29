@@ -33,7 +33,7 @@ end
 p = Params(32, 32, 32, 320.0, 320.0, 96.0, 5.3e-9, 33.0, 0.0, 4200.0, 1000.0, 0.01, 17.0, 2.0e-4, 5.75, 0.3)
 
 # Automatically distribute among available processors
-arch = Distributed(GPU())
+arch = GPU()
 @show arch
 rank = arch.local_rank
 Nranks = MPI.Comm_size(arch.communicator)
