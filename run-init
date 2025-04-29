@@ -37,7 +37,7 @@ export CUDA_VISIBLE_DEVICES=\$(expr \${LOCAL_RANK} % 1)
 
 echo "Global Rank \${GLOBAL_RANK} / Local Rank \${LOCAL_RANK} / CUDA_VISIBLE_DEVICES=\${CUDA_VISIBLE_DEVICES} / \$(hostname)"
 
-exec "$@"
+exec \$*
 
 EoF_s
 
