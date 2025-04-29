@@ -54,4 +54,4 @@ julia --projet -e 'using MPI; MPI.install_mpiexecjl()'
 # 4. Build MPI and CUDA in advance for yucks
 julia --project -e 'using MPI; using CUDA; CUDA.precompile_runtime()'
 # Finally, let's run this thing
-mpiexec -n 1 ./launch.sh julia --project oceananigans.jl
+mpiexecjl -n 1 ./launch.sh julia --project oceananigans.jl
