@@ -1,0 +1,1213 @@
+
+Currently Loaded Modules:
+  1) ncarenv/23.09 (S)   4) craype/2.7.31          7) cray-mpich/8.1.29
+  2) nvhpc/24.7          5) ncarcompilers/1.0.0
+  3) cuda/12.2.1         6) gcc-toolchain/13.2.0
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+
+[91849] signal (15): Terminated
+in expression starting at none:1
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+jl_gc_mark_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:139
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+jl_threadfun at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:199
+unknown function (ip: 0x1516ee0746e9)
+clone at /lib64/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib64/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:883
+ijl_task_get_next at /cache/build/tester-amdci4-11/julialang/julia-master/src/partr.c:517
+poptask at ./task.jl:999
+wait at ./task.jl:1008
+task_done_hook at ./task.jl:682
+jfptr_task_done_hook_75450.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+jl_finish_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:327
+start_task at /cache/build/tester-amdci4-11/julialang/julia-master/src/task.c:1267
+unknown function (ip: (nil))
+syscall at /lib64/libc.so.6 (unknown line)
+uv__statx at /workspace/srcdir/libuv/src/unix/linux-syscalls.c:294
+uv__fs_statx at /workspace/srcdir/libuv/src/unix/fs.c:1601
+uv__fs_stat at /workspace/srcdir/libuv/src/unix/fs.c:1656
+uv__fs_work at /workspace/srcdir/libuv/src/unix/fs.c:1807
+uv_fs_stat at /workspace/srcdir/libuv/src/unix/fs.c:2202
+jl_stat at /cache/build/tester-amdci4-11/julialang/julia-master/src/sys.c:119
+stat at ./stat.jl:150
+isfile at ./stat.jl:461 [inlined]
+#collect_artifacts#41 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:725
+collect_artifacts at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:720 [inlined]
+#check_artifacts_downloaded#43 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:778
+check_artifacts_downloaded at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:777 [inlined]
+#is_package_downloaded#147 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2211
+is_package_downloaded at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2206 [inlined]
+#print_status#148 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2332
+print_status at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2264 [inlined]
+#status#168 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2498
+status at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2466 [inlined]
+status at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2466 [inlined]
+#show_update#167 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2462 [inlined]
+show_update at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:2458
+unknown function (ip: 0x1516d65fc2d0)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+#add#86 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1412
+add at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/Operations.jl:1390 [inlined]
+#add#131 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:278
+add at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:229
+unknown function (ip: 0x1516d65dbc60)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+#add#27 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:159
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+add at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:148
+#add#25 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+add at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:147 [inlined]
+#add#24 at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:146 [inlined]
+add at /cache/build/tester-amdci4-11/julialang/julia-master/usr/share/julia/stdlib/v1.10/Pkg/src/API.jl:146
+jfptr_add_98463.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+do_call at /cache/build/tester-amdci4-11/julialang/julia-master/src/interpreter.c:126
+eval_value at /cache/build/tester-amdci4-11/julialang/julia-master/src/interpreter.c:223
+eval_stmt_value at /cache/build/tester-amdci4-11/julialang/julia-master/src/interpreter.c:174 [inlined]
+eval_body at /cache/build/tester-amdci4-11/julialang/julia-master/src/interpreter.c:617
+jl_interpret_toplevel_thunk at /cache/build/tester-amdci4-11/julialang/julia-master/src/interpreter.c:775
+jl_toplevel_eval_flex at /cache/build/tester-amdci4-11/julialang/julia-master/src/toplevel.c:934
+jl_toplevel_eval_flex at /cache/build/tester-amdci4-11/julialang/julia-master/src/toplevel.c:877
+jl_toplevel_eval_flex at /cache/build/tester-amdci4-11/julialang/julia-master/src/toplevel.c:877
+ijl_toplevel_eval_in at /cache/build/tester-amdci4-11/julialang/julia-master/src/toplevel.c:985
+eval at ./boot.jl:385 [inlined]
+exec_options at ./client.jl:296
+_start at ./client.jl:557
+jfptr__start_82923.1 at /glade/u/home/apauls/software/julia-1.10.8/lib/julia/sys.so (unknown line)
+_jl_invoke at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:2895 [inlined]
+ijl_apply_generic at /cache/build/tester-amdci4-11/julialang/julia-master/src/gf.c:3077
+jl_apply at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia.h:1982 [inlined]
+true_main at /cache/build/tester-amdci4-11/julialang/julia-master/src/jlapi.c:582
+jl_repl_entrypoint at /cache/build/tester-amdci4-11/julialang/julia-master/src/jlapi.c:731
+main at julia (unknown line)
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+unknown function (ip: 0x4010b8)
+unknown function (ip: (nil))
+Allocations: 5127894 (Pool: 5116005; Big: 11889); GC: 11
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`

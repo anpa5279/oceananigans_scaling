@@ -1,0 +1,139 @@
+
+Currently Loaded Modules:
+  1) ncarenv/23.09 (S)   4) craype/2.7.31          7) cray-mpich/8.1.29
+  2) nvhpc/24.7          5) ncarcompilers/1.0.0
+  3) cuda/12.2.1         6) gcc-toolchain/13.2.0
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+┌ Info: MPI implementation identified
+│   libmpi = "libmpi_nvidia.so"
+│   version_string = "MPI VERSION    : CRAY MPICH version 8.1.29.34 (ANL base 3.4a2)\nMPI BUILD INFO : Tue Feb 20 20:43 2024 (git hash d8ab47f)\n"
+│   impl = "CrayMPICH"
+│   version = v"8.1.29"
+└   abi = "MPICH"
+┌ Info: MPIPreferences unchanged
+│   binary = "system"
+│   libmpi = "libmpi_nvidia.so"
+│   abi = "MPICH"
+│   mpiexec = "mpiexec"
+│   preloads = 1-element Vector{String}: …
+└   preloads_env_switch = "MPICH_GPU_SUPPORT_ENABLED"
+┌ Warning: CUDA runtime library `libcudart.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcudart.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libcublasLt.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcublasLt.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libnvJitLink.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libnvJitLink.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libcusparse.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcusparse.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+Global Rank 0 / Local Rank 0 / CUDA_VISIBLE_DEVICES=0 / deg0066
+┌ Warning: CUDA runtime library `libcudart.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcudart.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libcublasLt.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcublasLt.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libnvJitLink.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libnvJitLink.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libcusparse.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcusparse.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+[ Info: Oceananigans will use 64 threads
+[ Info: MPI has not been initialized, so we are calling MPI.Init().
+arch = Distributed{GPU{CUDABackend}} across 1 rank:
+├── local_rank: 0 of 0-0
+├── local_index: [1, 1, 1]
+└── connectivity:
+Hello from process 0 out of 1
+ERROR: LoadError: MethodError: no method matching Field(::Tuple{DataType, DataType, DataType}, ::RectilinearGrid{Float64, Periodic, Periodic, Bounded, Oceananigans.Grids.StaticVerticalDiscretization{OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, Float64, Float64}, Float64, Float64, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, Distributed{GPU{CUDABackend}, false, Partition{Nothing, Nothing, Nothing}, Tuple{Int64, Int64, Int64}, Int64, Tuple{Int64, Int64, Int64}, Oceananigans.DistributedComputations.NeighboringRanks{Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, MPI.Comm, Vector{MPI.Request}, Base.RefValue{Int64}, Nothing}}, ::Type{Float64}; architecture::Distributed{GPU{CUDABackend}, false, Partition{Nothing, Nothing, Nothing}, Tuple{Int64, Int64, Int64}, Int64, Tuple{Int64, Int64, Int64}, Oceananigans.DistributedComputations.NeighboringRanks{Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, MPI.Comm, Vector{MPI.Request}, Base.RefValue{Int64}, Nothing})
+
+Closest candidates are:
+  Field(::Tuple, ::Oceananigans.Grids.AbstractGrid, ::Any, !Matched::Any, !Matched::Any, !Matched::Any) got unsupported keyword argument "architecture"
+   @ Oceananigans /glade/work/apauls/.julia/packages/Oceananigans/KwATX/src/Fields/field.jl:98
+  Field(::Tuple, ::Union{Oceananigans.Grids.AbstractGrid{FT, TX, TY, TZ, <:Distributed{<:CPU}}, Oceananigans.Grids.AbstractGrid{FT, TX, TY, TZ, <:Distributed{<:GPU}}} where {FT, TX, TY, TZ}, ::Any, !Matched::Any, !Matched::Tuple, !Matched::Any, !Matched::Any) got unsupported keyword argument "architecture"
+   @ Oceananigans /glade/work/apauls/.julia/packages/Oceananigans/KwATX/src/DistributedComputations/distributed_fields.jl:8
+  Field(::Tuple, ::Oceananigans.Grids.AbstractGrid, ::Any, !Matched::Any, !Matched::Any, !Matched::Any, !Matched::Any) got unsupported keyword argument "architecture"
+   @ Oceananigans /glade/work/apauls/.julia/packages/Oceananigans/KwATX/src/Fields/field.jl:98
+  ...
+
+Stacktrace:
+ [1] kwerr(::@NamedTuple{architecture::Distributed{GPU{CUDABackend}, false, Partition{Nothing, Nothing, Nothing}, Tuple{Int64, Int64, Int64}, Int64, Tuple{Int64, Int64, Int64}, Oceananigans.DistributedComputations.NeighboringRanks{Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, MPI.Comm, Vector{MPI.Request}, Base.RefValue{Int64}, Nothing}}, ::Type, ::Tuple{DataType, DataType, DataType}, ::RectilinearGrid{Float64, Periodic, Periodic, Bounded, Oceananigans.Grids.StaticVerticalDiscretization{OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, Float64, Float64}, Float64, Float64, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, Distributed{GPU{CUDABackend}, false, Partition{Nothing, Nothing, Nothing}, Tuple{Int64, Int64, Int64}, Int64, Tuple{Int64, Int64, Int64}, Oceananigans.DistributedComputations.NeighboringRanks{Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, MPI.Comm, Vector{MPI.Request}, Base.RefValue{Int64}, Nothing}}, ::Type)
+   @ Base ./error.jl:165
+ [2] (Field{Nothing, Nothing, Center})(grid::RectilinearGrid{Float64, Periodic, Periodic, Bounded, Oceananigans.Grids.StaticVerticalDiscretization{OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, Float64, Float64}, Float64, Float64, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, OffsetArrays.OffsetVector{Float64, StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}}, Distributed{GPU{CUDABackend}, false, Partition{Nothing, Nothing, Nothing}, Tuple{Int64, Int64, Int64}, Int64, Tuple{Int64, Int64, Int64}, Oceananigans.DistributedComputations.NeighboringRanks{Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, MPI.Comm, Vector{MPI.Request}, Base.RefValue{Int64}, Nothing}}, T::DataType; kw::@Kwargs{architecture::Distributed{GPU{CUDABackend}, false, Partition{Nothing, Nothing, Nothing}, Tuple{Int64, Int64, Int64}, Int64, Tuple{Int64, Int64, Int64}, Oceananigans.DistributedComputations.NeighboringRanks{Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, MPI.Comm, Vector{MPI.Request}, Base.RefValue{Int64}, Nothing}})
+   @ Oceananigans.Fields /glade/work/apauls/.julia/packages/Oceananigans/KwATX/src/Fields/field.jl:182
+ [3] top-level scope
+   @ /glade/work/apauls/oceananigans_scaling/oceananigans.jl:83
+in expression starting at /glade/work/apauls/oceananigans_scaling/oceananigans.jl:83
+deg0066.hsn.de.hpc.ucar.edu: rank 0 exited with code 1

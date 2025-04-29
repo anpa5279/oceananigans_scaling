@@ -1,0 +1,80 @@
+
+Currently Loaded Modules:
+  1) ncarenv/23.09 (S)   4) craype/2.7.31          7) cray-mpich/8.1.29
+  2) nvhpc/24.7          5) ncarcompilers/1.0.0
+  3) cuda/12.2.1         6) gcc-toolchain/13.2.0
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+   Resolving package versions...
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Project.toml`
+  No Changes to `/glade/work/apauls/oceananigans_scaling/Manifest.toml`
+┌ Info: MPI implementation identified
+│   libmpi = "libmpi_nvidia.so"
+│   version_string = "MPI VERSION    : CRAY MPICH version 8.1.29.34 (ANL base 3.4a2)\nMPI BUILD INFO : Tue Feb 20 20:43 2024 (git hash d8ab47f)\n"
+│   impl = "CrayMPICH"
+│   version = v"8.1.29"
+└   abi = "MPICH"
+┌ Info: MPIPreferences unchanged
+│   binary = "system"
+│   libmpi = "libmpi_nvidia.so"
+│   abi = "MPICH"
+│   mpiexec = "mpiexec"
+│   preloads = 1-element Vector{String}: …
+└   preloads_env_switch = "MPICH_GPU_SUPPORT_ENABLED"
+┌ Warning: CUDA runtime library `libcudart.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcudart.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libcublasLt.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcublasLt.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libnvJitLink.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libnvJitLink.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+┌ Warning: CUDA runtime library `libcusparse.so.12` was loaded from a system path, `/glade/u/apps/common/23.08/spack/opt/spack/cuda/12.2.1/lib64/libcusparse.so.12`.
+│ This may cause errors.
+│ 
+│ If you're running under a profiler, this situation is expected. Otherwise,
+│ ensure that your library path environment variable (e.g., `PATH` on Windows
+│ or `LD_LIBRARY_PATH` on Linux) does not include CUDA library paths.
+│ 
+│ In any other case, please file an issue.
+└ @ CUDA /glade/work/apauls/.julia/packages/CUDA/oymHm/src/initialization.jl:218
+Global Rank 0 / Local Rank 0 / CUDA_VISIBLE_DEVICES=0 / deg0027
+┌ Info: 0
+│   ranks =
+│    1-element Vector{Int64}:
+└     1
