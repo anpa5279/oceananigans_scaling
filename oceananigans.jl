@@ -9,7 +9,7 @@ using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
 
 MPI.Init()
-
+start1 = time()
 mutable struct Params
     Nx::Int         # number of points in each of x direction
     Ny::Int         # number of points in each of y direction
@@ -152,7 +152,6 @@ simulation.output_writers[:fields] = JLD2Writer(model, fields_to_output,
                                                       filename = "scaling_test_fields_$(rank).jld2",
                                                       overwrite_existing = true,
                                                       init = save_IC!)
-start1 = time()
 
 run!(simulation)
 
