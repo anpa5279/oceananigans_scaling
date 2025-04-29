@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #PBS -A UCUB0166  
-#PBS -N test
+#PBS -N scaling
 #PBS -j oe
 #PBS -q develop 
 #PBS -l walltime=0:10:00
