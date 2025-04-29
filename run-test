@@ -49,9 +49,9 @@ julia --project -e 'using Pkg; Pkg.instantiate()'
 # 2. Add some packages to the environment that we need to use
 julia --project -e 'using Pkg; Pkg.add("MPI"); Pkg.add("MPIPreferences"); Pkg.add("CUDA"); Pkg.add("Oceananigans"); Pkg.add("Printf")'
 # 3. Tell MPI that we would like to use the system binary we loaded with module load cray-mpich
-julia --projet -e 'using MPI; MPI.install_mpiexecjl()'
-#julia --project -e 'using MPIPreferences; MPIPreferences.use_system_binary(vendor="cray")'
+#julia --projet -e 'using MPI; MPI.install_mpiexecjl()'
+julia --project -e 'using MPIPreferences; MPIPreferences.use_system_binary(vendor="cray")'
 # 4. Build MPI and CUDA in advance for yucks
 julia --project -e 'using MPI; using CUDA; CUDA.precompile_runtime()'
 # Finally, let's run this thing
-mpiexecjl -n 3 ./launch.sh julia --project test.jl
+mpiexec -n 3 ./launch.sh julia --project test.jl
