@@ -6,4 +6,5 @@ test_runs/
 *.sh
 *.mp4
 *.jld2
+scaling.o*
 test.o*
