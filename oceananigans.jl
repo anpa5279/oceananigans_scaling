@@ -80,7 +80,7 @@ function dstokes_dz(z, u₁₀)
 end 
 const z_d = collect(reverse(-p.Lz + grid.z.Δᵃᵃᶜ/2 : grid.z.Δᵃᵃᶜ : -grid.z.Δᵃᵃᶜ/2))
 const dudz = dstokes_dz(z_d, p.u₁₀)
-new_dUSDdz = Field{Nothing, Nothing, Center}(grid)
+new_dUSDdz = Field{Nothing, Nothing, Center}(grid, architecture=arch)
 set!(new_dUSDdz, reshape(dudz, 1, 1, :))
 
 u_f = p.La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, p.u₁₀)[1])
