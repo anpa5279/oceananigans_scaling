@@ -158,3 +158,4 @@ end1 = time()
 @show start1
 @show end1
 @show end1 - start1
+@show simulation.model.clock.iteration
