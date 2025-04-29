@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#PBS -A UCUB0166
+#PBS -N oceananigans_1gpu
+#PBS -j oe
+#PBS -q develop 
+#PBS -l walltime=0:10:00
+#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=84GB
+#PBS -l gpu_type=a100
+
+# Threading and precompile settings
+export JULIA_NUM_PRECOMPILE_TASKS=64
+export JULIA_NUM_THREADS=64
+
+# Load modules
+module --force purge
+module load ncarenv/23.09 nvhpc/24.7 cuda/12.2.1 cray-mpich/8.1.29
+
+module list
+
+# Set environment variables for MPI + CUDA
+export MPICH_GPU_SUPPORT_ENABLED=1
+export MPICH_GPU_MANAGED_MEMORY_SUPPORT_ENABLED=1
+export JULIA_MPI_HAS_CUDA=true
+export PALS_TRANSFER=false
+export JULIA_CUDA_MEMORY_POOL=none
+
+# Wrapper script to bind CUDA device
+cat > launch.sh << 'EOF'
+#!/bin/bash
+export MPICH_GPU_SUPPORT_ENABLED=1
+export MPICH_GPU_MANAGED_MEMORY_SUPPORT_ENABLED=1
+export LOCAL_RANK=${PMI_LOCAL_RANK:-0}
+export GLOBAL_RANK=${PMI_RANK:-0}
+export CUDA_VISIBLE_DEVICES=0  # Only 1 GPU available; bind to GPU 0
+
+echo "Global Rank ${GLOBAL_RANK} / Local Rank ${LOCAL_RANK} / CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES} / $(hostname)"
+exec \$*
+EOF
+
+chmod +x launch.sh
+
+# Set up Julia environment (assumes packages are already added in your environment)
+julia --project -e 'using Pkg; Pkg.instantiate()'
+julia --project -e 'using MPIPreferences; MPIPreferences.use_system_binary(vendor="cray")'
+julia --project -e 'using MPI; using CUDA; CUDA.precompile_runtime()'
+
+# Run your simulation
+mpiexec -n 1 ./launch.sh julia --project oceananigans.jl
