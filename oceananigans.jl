@@ -7,7 +7,7 @@ using CUDA
 using Statistics
 using Printf
 using Oceananigans
-using Oceananigans.DistributedComputations
+#using Oceananigans.DistributedComputations
 using Oceananigans.Architectures: Distributed, Architecture
 using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
