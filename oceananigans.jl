@@ -120,7 +120,7 @@ set!(model, u=uᵢ, w=wᵢ, T=Tᵢ)
 
 simulation = Simulation(model, Δt=30.0, stop_time = 4hours) #stop_time = 96hours,
 @show simulation
-
+wall_clock = Ref(time_ns())
 function progress(sim)
     elapsed = 1e-9 * (time_ns() - wall_clock[])
 
