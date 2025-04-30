@@ -32,7 +32,7 @@ mutable struct Params
 end
 
 #defaults, these can be changed directly below 128, 128, 160, 320.0, 320.0, 96.0
-p = Params(256, 384, 384, 320.0, 320.0, 96.0, 5.3e-9, 33.0, 0.0, 4200.0, 1000.0, 0.01, 17.0, 2.0e-4, 5.75, 0.3)
+p = Params(100, 100, 200, 320.0, 320.0, 96.0, 5.3e-9, 33.0, 0.0, 4200.0, 1000.0, 0.01, 17.0, 2.0e-4, 5.75, 0.3)
 # Determine architecture based on number of MPI ranks
 Nranks = MPI.Comm_size(MPI.COMM_WORLD)
 arch = Nranks > 1 ? Distributed(GPU()) : GPU()
@@ -44,6 +44,7 @@ Nranks = arch isa Distributed ? MPI.Comm_size(arch.communicator) : 1
 println("Hello from process $rank out of $Nranks")
 
 grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
+@show grid
 
 #stokes drift
 function stokes_velocity(z, u₁₀)
