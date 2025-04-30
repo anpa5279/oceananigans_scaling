@@ -4,7 +4,7 @@
 #PBS -N scaling
 #PBS -j oe
 #PBS -q develop 
-#PBS -l walltime=0:30:00
+#PBS -l walltime=0:50:00
 #PBS -l select=1:ncpus=64:mpiprocs=2:ngpus=1:mem=150GB
 #PBS -l gpu_type=a100
 
