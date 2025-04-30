@@ -8,3 +8,4 @@ test_runs/
 *.jld2
 scaling.o*
 test.o*
+scaling.o93*
