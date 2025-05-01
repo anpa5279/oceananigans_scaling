@@ -5,7 +5,7 @@
 #PBS -j oe
 #PBS -q main
 #PBS -l job_priority=economy 
-#PBS -l walltime= 2:50:00
+#PBS -l walltime=02:50:00
 #PBS -l select=1:ncpus=64:mpiprocs=2:ngpus=1:mem=150GB
 #PBS -l gpu_type=a100
 
