@@ -46,6 +46,7 @@ println("Hello from process $rank out of $Nranks")
 grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
 
 τx = -3.72e-5# -(u_f^2)
+u_f = sqrt(abs(τx))
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
 @show u_bcs
 
