@@ -22,6 +22,7 @@ set!(c, (x, y, z) -> x * y^2 * z^3)
 @show c
 
 u = XFaceField(grid)
+@show u
 set!(c, (x, y, z) -> x * y^2 * z^3)
 interpolate!(u, c)
 
