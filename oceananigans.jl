@@ -45,52 +45,7 @@ println("Hello from process $rank out of $Nranks")
 
 grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
 
-#stokes drift
-function stokes_velocity(z, u₁₀)
-    u = Array{Float64}(undef, length(z))
-    α = 0.00615
-    fₚ = 2π * 0.13 * g_Earth / u₁₀ # rad/s (0.22 1/s)
-    a = 0.1
-    b = 5000.0
-    nf = 3^9
-    df = (b -  a) / nf
-    for i in 1:length(z)
-        σ = a + 0.5 * df
-        u_temp = 0.0
-        for k in 1:nf
-            u_temp = u_temp + (2.0 * α * g_Earth / (fₚ * σ) * exp(2.0 * σ^2 * z[i] / g_Earth - (fₚ / σ)^4))
-            σ = σ + df
-        end 
-        u[i] = df * u_temp
-    end
-    return u
-end
-function dstokes_dz(z, u₁₀)
-    dudz = Array{Float64}(undef, length(z))
-    α = 0.00615
-    fₚ = 2π * 0.13 * g_Earth / u₁₀ # rad/s (0.22 1/s)
-    a = 0.1
-    b = 5000.0
-    nf = 3^9
-    df = (b -  a) / nf
-    for i in 1:length(z)
-        σ = a + 0.5 * df
-        du_temp = 0.0
-        for k in 1:nf
-            du_temp = du_temp + (4.0 * α * σ/ (fₚ) * exp(2.0 * σ^2 * z[i] / g_Earth - (fₚ / σ)^4))
-            σ = σ + df
-        end 
-        dudz[i] = df * du_temp
-    end
-    return dudz
-end 
-const z_d = collect(reverse(-p.Lz + grid.z.Δᵃᵃᶜ/2 : grid.z.Δᵃᵃᶜ : -grid.z.Δᵃᵃᶜ/2))
-const dudz = dstokes_dz(z_d, p.u₁₀)
-new_dUSDdz = Field{Nothing, Nothing, Center}(grid)
-set!(new_dUSDdz, reshape(dudz, 1, 1, :))
-
-u_f = p.La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, p.u₁₀)[1])
-τx = -(u_f^2)
+τx = -3.72e-5# -(u_f^2)
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
 @show u_bcs
 
