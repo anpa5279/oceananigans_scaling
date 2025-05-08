@@ -79,13 +79,6 @@ wall_clock = Ref(time_ns())
 
 conjure_time_step_wizard!(simulation, cfl=0.5, max_Δt=30seconds)
 
-#output files
-function save_IC!(file, model)
-    file["IC/friction_velocity"] = u_f
-    file["IC/stokes_velocity"] = stokes_velocity(-grid.z.Δᵃᵃᶜ/2, p.u₁₀)[1]
-    file["IC/wind_speed"] = p.u₁₀
-    return nothing
-end
 
 output_interval = 10minutes
 
@@ -94,8 +87,7 @@ fields_to_output = merge(model.velocities, model.tracers)
 simulation.output_writers[:fields] = JLD2Writer(model, fields_to_output,
                                                       schedule = TimeInterval(output_interval),
                                                       filename = "scaling_test_fields_$(rank).jld2",
-                                                      overwrite_existing = true,
-                                                      init = save_IC!)
+                                                      overwrite_existing = true)
 wall_clock = Ref(time_ns())
 function progress(sim)
     elapsed = 1e-9 * (time_ns() - wall_clock[])
