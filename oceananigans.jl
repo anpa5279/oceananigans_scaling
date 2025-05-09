@@ -45,7 +45,16 @@ println("Hello from process $rank out of $Nranks")
 
 grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
 
-τx = -3.72e-5# -(u_f^2)
+include("stokes.jl")
+
+#stokes drift
+const z_d = collect(-p.Lz + grid.z.Δᵃᵃᶜ/2 : grid.z.Δᵃᵃᶜ : -grid.z.Δᵃᵃᶜ/2)
+const dudz = dstokes_dz(z_d, p.u₁₀)
+new_dUSDdz = Field{Nothing, Nothing, Center}(grid)
+set!(new_dUSDdz, reshape(dudz, 1, 1, :))
+
+u_f = p.La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, p.u₁₀)[1])
+τx = -(u_f^2) #τx = -3.72e-5# -(u_f^2)
 u_f = sqrt(abs(τx))
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
 @show u_bcs
@@ -103,8 +112,53 @@ function progress(sim)
 
     return nothing
 end
+function num_check(sim)
+    fields_to_check = merge(sim.model.velocities, sim.model.tracers, sim.model.pressures, (; νₑ=sim.model.diffusivity_fields.νₑ, κₑ=sim.model.diffusivity_fields.κₑ.T, ∂z_u =sim.model.stokes_drift.∂z_uˢ))
+    n_fields = keys(fields_to_check)
+    #@show n_fields
+    for (i, name) in enumerate(n_fields)
+        #@show name
+        field = fields_to_check[name]
+        #@show field
+        x = field.data
+        if isfinite(sum(x)) == false 
+            println("error")
+            if isnan(sum(x))
+                index = collect.(Tuple.(findall(isnan.(x))))
+                msg = @sprintf("iteration: %d, time: %s, NaN in field %s at: %d, %d, %d \n",
+                                iteration(sim), 
+                                prettytime(time(sim)), 
+                                "$(n_fields[i])",
+                                index[1][1], 
+                                index[1][2], 
+                                index[1][3])
 
-add_callback!(simulation, progress, name=:progress, IterationInterval(20))
+            elseif isinf(sum(x))
+                index = collect.(Tuple.(findall(isinf.(x))))
+                msg = @sprintf("iteration: %d, time: %s, inf in field %s at: %d, %d, %d\n",
+                                iteration(sim), 
+                                prettytime(time(sim)), 
+                                "$(n_fields[i])",
+                                index[1][1], 
+                                index[1][2], 
+                                index[1][3])
+
+            else
+                msg = @sprintf("iteration: %d, time: %s, unknown in field %s\n",
+                                iteration(sim), 
+                                prettytime(sim),
+                                "$(n_fields[i])")
+            end
+            @info msg
+            error()
+        end
+    end
+    return nothing
+end
+
+simulation.callbacks[:progress] = Callback(progress, IterationInterval(20))
+simulation.callbacks[:num_check] = Callback(num_check, IterationInterval(1))
+
 setup_end = time()
 # MPI.Barrier()
 start1 = time()
