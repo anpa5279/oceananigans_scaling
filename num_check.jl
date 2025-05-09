@@ -7,7 +7,7 @@ function num_check(sim)
         field = fields_to_check[name]
         #@show field
         x = field.data
-        if any(isnan.(x))
+        if CUDA.@allowscalar any(isnan.(x))
             index = collect.(Tuple.(findall(isnan.(x))))
             msg = @sprintf("iteration: %d, time: %s, NaN in field %s at: %d, %d, %d \n",
                             iteration(sim), 
@@ -19,7 +19,7 @@ function num_check(sim)
             @info msg
             error()
 
-        elseif any(isinf.(x))
+        elseif CUDA.@allowscalar any(isinf.(x))
             index = collect.(Tuple.(findall(isinf.(x))))
             msg = @sprintf("iteration: %d, time: %s, inf in field %s at: %d, %d, %d\n",
                             iteration(sim), 
