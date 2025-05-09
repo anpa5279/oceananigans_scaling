@@ -1,7 +1,7 @@
 function num_check(sim)
     fields_to_check = merge(sim.model.velocities, sim.model.tracers, sim.model.pressures, (; νₑ=sim.model.diffusivity_fields.νₑ, κₑ=sim.model.diffusivity_fields.κₑ.T, ∂z_u =sim.model.stokes_drift.∂z_uˢ))
     n_fields = keys(fields_to_check)
-    #@show n_fields
+    @show n_fields
     for (i, name) in enumerate(n_fields)
         #@show name
         field = fields_to_check[name]
