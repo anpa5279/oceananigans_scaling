@@ -7,6 +7,7 @@ using CUDA
 using Statistics
 using Printf
 using Oceananigans
+using Oceananigans.Models: NaNChecker
 using Oceananigans.DistributedComputations
 using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
