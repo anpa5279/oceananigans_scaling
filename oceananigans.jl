@@ -115,9 +115,9 @@ end
 
 simulation.callbacks[:progress] = Callback(progress, IterationInterval(20))
 
-include("num_check.jl")
-simulation.callbacks[:num_check] = Callback(num_check, IterationInterval(1))
-
+#include("num_check.jl")
+#simulation.callbacks[:num_check] = Callback(num_check, IterationInterval(1))
+simulation.callbacks.vals[4].schedule = IterationInterval(1, 0)
 setup_end = time()
 # MPI.Barrier()
 start1 = time()

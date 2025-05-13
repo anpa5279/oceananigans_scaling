@@ -98,7 +98,8 @@ function progress(simulation)
     return nothing
 end
 simulation.callbacks[:progress] = Callback(progress, IterationInterval(20))
-include("num_check.jl")
-simulation.callbacks[:num_check] = Callback(num_check, IterationInterval(1))
+#include("num_check.jl")
+#simulation.callbacks[:num_check] = Callback(num_check, IterationInterval(1))
+simulation.callbacks.vals[4].schedule.interval = 1
 
 run!(simulation)
