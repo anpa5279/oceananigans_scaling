@@ -8,7 +8,7 @@ function num_check(sim)
         #@show field
         x = field.data
         if any(isnan, parent(field))
-            index = collect.(Tuple.(findall(isnan, parent(field))))
+            index = collect.(Tuple.(findall(isnan, Array(parent(field)))))
             @show "inside if statement for nans"
             for i in 1:length(index)
                 @show "inside for loop"
