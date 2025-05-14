@@ -8,7 +8,7 @@ function num_check(sim)
         #@show field
         x = field.data
         if any(isnan, parent(field))
-            index = collect.(Tuple.(findall(isnan.(x))))
+            index = collect.(Tuple.(findall(any(isnan, parent(field)))))
             msg = @sprintf("iteration: %d, time: %s, NaN in field %s at: %d, %d, %d \n",
                             iteration(sim), 
                             prettytime(time(sim)), 
@@ -20,7 +20,7 @@ function num_check(sim)
             error()
 
         elseif any(isinf, parent(field))
-            index = collect.(Tuple.(findall(isinf.(x))))
+            index = collect.(Tuple.(findall(any(isinf, parent(field)))))
             msg = @sprintf("iteration: %d, time: %s, inf in field %s at: %d, %d, %d\n",
                             iteration(sim), 
                             prettytime(time(sim)), 
