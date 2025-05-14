@@ -114,11 +114,9 @@ function progress(sim)
 end
 
 simulation.callbacks[:progress] = Callback(progress, IterationInterval(20))
-simulation.callbacks[:nan_checker] = Callback(NaNChecker(fields_to_output, true), IterationInterval(1))
+include("num_check.jl")
+simulation.callbacks[:nan_checker] = Callback(num_check, IterationInterval(1)) #Callback(NaNChecker(fields_to_output, true), IterationInterval(1))
 
-#include("num_check.jl")
-#simulation.callbacks[:num_check] = Callback(num_check, IterationInterval(1))
-#simulation.callbacks.vals[4].schedule.interval = 1
 setup_end = time()
 # MPI.Barrier()
 start1 = time()
