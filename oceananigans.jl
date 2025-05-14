@@ -46,7 +46,7 @@ Nranks = arch isa Distributed ? MPI.Comm_size(arch.communicator) : 1
 println("Hello from process $rank out of $Nranks")
 
 grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
-
+@show grid
 include("stokes.jl")
 
 #stokes drift
