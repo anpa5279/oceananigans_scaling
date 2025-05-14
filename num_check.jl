@@ -9,7 +9,9 @@ function num_check(sim)
         x = field.data
         if any(isnan, parent(field))
             index = collect.(Tuple.(findall(isnan, parent(field))))
+            @show "inside if statement for nans"
             for i in 1:length(index)
+                @show "inside for loop"
                 msg = @sprintf("iteration: %d, time: %s, NaN in field %s at: %d, %d, %d \n
                                 surrounding values: 
                                 +Δx: %6.3e,\n
