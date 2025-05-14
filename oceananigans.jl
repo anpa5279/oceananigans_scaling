@@ -4,6 +4,7 @@ using MPI
 MPI.Init()
 
 using CUDA
+
 using Statistics
 using Printf
 using Oceananigans
