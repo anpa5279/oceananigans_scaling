@@ -1,4 +1,14 @@
 #!/bin/bash
+
+#PBS -A UCUB0166 
+#PBS -N pt_400
+#PBS -q main
+#PBS -j oe
+#PBS -l job_priority=regular
+#PBS -l walltime=0:10:00
+#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=600GB
+#PBS -l gpu_type=a100
+
 jobn = pt_400
 rm -rf $jobn
 mkdir $jobn
@@ -9,15 +19,6 @@ cp num_check.jl $jobn
 
 cd $jobn
 mkdir outputs
-
-#PBS -A UCUB0166 
-#PBS -N $jobn
-#PBS -q main
-#PBS -j oe
-#PBS -l job_priority=regular
-#PBS -l walltime=0:10:00
-#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=600GB
-#PBS -l gpu_type=a100
 
 # Use moar processes for precompilation to speed things up
 export JULIA_NUM_PRECOMPILE_TASKS=64
