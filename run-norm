@@ -1,14 +1,5 @@
 #!/bin/bash
 
-#PBS -A UCUB0166 
-#PBS -N pt_336
-#PBS -q main
-#PBS -j oe
-#PBS -l job_priority=economy
-#PBS -l walltime=0:10:00
-#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=580GB
-#PBS -l gpu_type=a100
-
 jobn = pt_336
 rm -rf $jobn
 mkdir $jobn
@@ -21,6 +12,17 @@ echo '---> Directory Made'
 cd $jobn/
 mkdir outputs
 
+cat > EXEC_STEP << EXEC
+#!/bin/sh
+
+#PBS -A UCUB0166 
+#PBS -N $jobn
+#PBS -q main
+#PBS -j oe
+#PBS -l job_priority=economy
+#PBS -l walltime=0:10:00
+#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=580GB
+#PBS -l gpu_type=a100
 # Use moar processes for precompilation to speed things up
 export JULIA_NUM_PRECOMPILE_TASKS=64
 export JULIA_NUM_THREADS=64
@@ -53,7 +55,9 @@ echo "Global Rank \${GLOBAL_RANK} / Local Rank \${LOCAL_RANK} / CUDA_VISIBLE_DEV
 exec \$*
 EoF_s
 
+
 chmod +x launch.sh
+
 julia --project -e 'using Pkg; Pkg.instantiate()'
 # Tell MPI that we would like to use the system binary we loaded with module load cray-mpich
 julia --project -e 'using MPIPreferences; MPIPreferences.use_system_binary(vendor="cray", force=true)'
@@ -63,3 +67,6 @@ julia --project -e 'using MPI; using CUDA; CUDA.precompile_runtime()'
 julia --project -e 'using Pkg; Pkg.add("MPI"); Pkg.add("MPIPreferences"); Pkg.add("CUDA"); Pkg.add("Oceananigans"); Pkg.add("Printf")'
 # Finally, let's run this thing
 mpiexec -n 1 ./launch.sh julia --project oceananigans.jl
+EXEC
+
+qsub < EXEC_STEP
