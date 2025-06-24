@@ -1,23 +1,23 @@
 #!/bin/bash
 
 #PBS -A UCUB0166 
-#PBS -N pt_400
+#PBS -N pt_336
 #PBS -q main
 #PBS -j oe
-#PBS -l job_priority=regular
+#PBS -l job_priority=economy
 #PBS -l walltime=0:10:00
-#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=600GB
+#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=580GB
 #PBS -l gpu_type=a100
 
-jobn = pt_400
+jobn = pt_336
 rm -rf $jobn
 mkdir $jobn
 
-cp oceananigans.jl $jobn
-cp stokes.jl $jobn
-cp num_check.jl $jobn
+cp oceananigans.jl $jobn/
+cp stokes.jl $jobn/
+cp num_check.jl $jobn/
 
-cd $jobn
+cd $jobn/
 mkdir outputs
 
 # Use moar processes for precompilation to speed things up
