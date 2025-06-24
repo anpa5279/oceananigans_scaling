@@ -16,6 +16,7 @@ mkdir $jobn
 cp oceananigans.jl $jobn/
 cp stokes.jl $jobn/
 cp num_check.jl $jobn/
+echo '---> Directory Made'
 
 cd $jobn/
 mkdir outputs
@@ -61,4 +62,4 @@ julia --project -e 'using MPI; using CUDA; CUDA.precompile_runtime()'
 # 2. Update packages to the environment that we need to use. not always necessary
 julia --project -e 'using Pkg; Pkg.add("MPI"); Pkg.add("MPIPreferences"); Pkg.add("CUDA"); Pkg.add("Oceananigans"); Pkg.add("Printf")'
 # Finally, let's run this thing
-mpiexec -n 4 ./launch.sh julia --project oceananigans.jl
+mpiexec -n 1 ./launch.sh julia --project oceananigans.jl
