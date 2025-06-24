@@ -1,11 +1,21 @@
 #!/bin/bash
+jobn = pt_400
+rm -rf $jobn
+mkdir $jobn
+
+cp oceananigans.jl $jobn
+cp stokes.jl $jobn
+cp num_check.jl $jobn
+
+cd $jobn
 
 #PBS -A UCUB0166
-#PBS -N oceananigans_1gpu
+#PBS -N jobn
 #PBS -j oe
-#PBS -q develop 
+#PBS -q main 
+#PBS -l job_priority=economy 
 #PBS -l walltime=0:10:00
-#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=84GB
+#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=600GB
 #PBS -l gpu_type=a100
 
 # Threading and precompile settings
