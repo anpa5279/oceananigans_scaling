@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jobn=pt_336
+jobn=pt_400
 rm -rf $jobn
 mkdir $jobn
 
