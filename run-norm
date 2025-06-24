@@ -10,7 +10,6 @@ cp num_check.jl $jobn/
 echo '---> Directory Made'
 
 cd $jobn/
-mkdir outputs
 
 cat > EXEC_STEP << EXEC
 #!/bin/sh
