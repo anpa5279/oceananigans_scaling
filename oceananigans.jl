@@ -4,7 +4,7 @@ using MPI
 MPI.Init()
 
 using CUDA
-
+using Random
 using Statistics
 using Printf
 using Oceananigans
@@ -78,15 +78,22 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
 @show model
 
 # random seed
-Ξ(x, y, z) = randn() * exp(z / 4)
+noise_array = randn(size(grid))
 
-Tᵢ(x, y, z) = z > - p.initial_mixed_layer_depth ? p.T0 : p.T0 + p.dTdz * (z + p.initial_mixed_layer_depth)+ p.dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z) 
-uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z) 
-wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z) 
+zC = interior(grid.zC)
+for k in 1:p.Nz
+    noise_array[:, :, k] .*= exp(zC[k] / 4)
+end
 
-set!(model, u = (x, y, z, t) -> uᵢ(x, y, z),
-             w = (x, y, z, t) -> wᵢ(x, y, z),
-             T = (x, y, z, t) -> Tᵢ(x, y, z))
+# Create and set field
+Ξ_field = Field(Center, Center, Center, grid)
+set!(Ξ_field, noise_array)
+@show "rand equations made"
+Tᵢ(x, y, z) = z > - p.initial_mixed_layer_depth ? p.T0 : p.T0 + p.dTdz * (z + p.initial_mixed_layer_depth)+ p.dTdz * model.grid.Lz * 1e-6 * r_z(z) * r_xy(y) * r_xy(x + p.Lx)
+uᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + p.Lx)
+wᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + p.Lx)
+@show "equations defined"
+set!(model, u=uᵢ, w=wᵢ, T=Tᵢ)
 simulation = Simulation(model, Δt=30.0, stop_time = 4hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
