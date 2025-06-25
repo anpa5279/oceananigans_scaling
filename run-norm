@@ -6,8 +6,6 @@ mkdir $jobn
 
 cp oceananigans.jl $jobn/
 cp stokes.jl $jobn/
-cp num_check.jl $jobn/
-echo '---> Directory Made'
 
 cd $jobn/
 touch Project.toml

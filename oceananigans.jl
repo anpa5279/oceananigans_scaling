@@ -54,7 +54,7 @@ const z_d = range(-p.Lz + grid.z.Δᵃᵃᶜ/2, stop = -grid.z.Δᵃᵃᶜ/2, st
 const dudz_cpu = dstokes_dz(z_d, p.u₁₀)  # Runs on CPU, returns Vector{Float64}
 const dudz_gpu = CUDA.CuArray(dudz_cpu)  # Explicitly move to GPU
 new_dUSDdz = Field{Nothing, Nothing, Center}(grid)
-set!(new_dUSDdz, reshape(dudz, 1, 1, :))
+set!(new_dUSDdz, reshape(dudz_gpu, 1, 1, :))
 
 u_f = p.La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, p.u₁₀)[1])
 τx = -(u_f^2) #τx = -3.72e-5# -(u_f^2)
@@ -74,18 +74,19 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
                             tracers = (:T),
                             closure = AnisotropicMinimumDissipation(),
                             stokes_drift = UniformStokesDrift(∂z_uˢ=new_dUSDdz),
-                            boundary_conditions = (u=u_bcs, T=T_bcs)) 
+                            boundary_conditions = (u=u_bcs, T=T_bcs))
 @show model
 
 # random seed
-Ξ(z) = randn() * exp(z / 4)
+Ξ(x, y, z) = randn() * exp(z / 4)
 
-Tᵢ(x, y, z) = z > - p.initial_mixed_layer_depth ? p.T0 : p.T0 + p.dTdz * (z + p.initial_mixed_layer_depth)+ p.dTdz * model.grid.Lz * 1e-6 * Ξ(z)
-uᵢ(x, y, z) = u_f * 1e-1 * Ξ(z)
-wᵢ(x, y, z) = u_f * 1e-1 * Ξ(z)
+Tᵢ(x, y, z) = z > - p.initial_mixed_layer_depth ? p.T0 : p.T0 + p.dTdz * (z + p.initial_mixed_layer_depth)+ p.dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z) 
+uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z) 
+wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z) 
 
-set!(model, u=uᵢ, w=wᵢ, T=Tᵢ)
-
+set!(model, u = (x, y, z, t) -> uᵢ(x, y, z),
+             w = (x, y, z, t) -> wᵢ(x, y, z),
+             T = (x, y, z, t) -> Tᵢ(x, y, z))
 simulation = Simulation(model, Δt=30.0, stop_time = 4hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
@@ -117,6 +118,8 @@ function progress(sim)
 end
 
 simulation.callbacks[:progress] = Callback(progress, IterationInterval(20))
+#include("nan-check.jl")
+#simulation.callbacks[:nan_checker] = Callback(num_check, IterationInterval(1)) #Callback(NaNChecker(fields_to_output, true), IterationInterval(1))
 
 setup_end = time()
 # MPI.Barrier()
