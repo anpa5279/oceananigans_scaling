@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jobn=pt_400
+jobn=384-2nodes
 rm -rf $jobn
 mkdir $jobn
 
@@ -10,7 +10,7 @@ cp num_check.jl $jobn/
 echo '---> Directory Made'
 
 cd $jobn/
-
+touch Project.toml
 cat > EXEC_STEP << EXEC
 #!/bin/sh
 
@@ -20,7 +20,7 @@ cat > EXEC_STEP << EXEC
 #PBS -j oe
 #PBS -l job_priority=economy
 #PBS -l walltime=0:10:00
-#PBS -l select=1:ncpus=64:mpiprocs=1:ngpus=1:mem=580GB
+#PBS -l select=2:ncpus=64:mpiprocs=1:ngpus=1:mem=390GB
 #PBS -l gpu_type=a100
 # Use moar processes for precompilation to speed things up
 export JULIA_NUM_PRECOMPILE_TASKS=64
@@ -40,16 +40,16 @@ export PALS_TRANSFER=false
 export JULIA_CUDA_MEMORY_POOL=none
 
 # Write down a script that binds MPI processes to GPUs (taken from Derecho documentation)
-cat > launch.sh << EoF_s
+cat > launch.sh << 'EoF_s'
 #! /bin/bash
 
 export MPICH_GPU_SUPPORT_ENABLED=1
 export MPICH_GPU_MANAGED_MEMORY_SUPPORT_ENABLED=1
-export LOCAL_RANK=\${PMI_LOCAL_RANK}
-export GLOBAL_RANK=\${PMI_RANK}
-export CUDA_VISIBLE_DEVICES=\$(expr \${LOCAL_RANK} % 4)
+export LOCAL_RANK=${OMPI_COMM_WORLD_LOCAL_RANK:-${PMI_LOCAL_RANK:-0}}
+export GLOBAL_RANK=${OMPI_COMM_WORLD_RANK:-${PMI_RANK:-0}}
+export CUDA_VISIBLE_DEVICES=0  # One GPU per node
 
-echo "Global Rank \${GLOBAL_RANK} / Local Rank \${LOCAL_RANK} / CUDA_VISIBLE_DEVICES=\${CUDA_VISIBLE_DEVICES} / \$(hostname)"
+echo "Global Rank ${GLOBAL_RANK} / Local Rank ${LOCAL_RANK} / CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES} / $(hostname)"
 
 exec \$*
 EoF_s
@@ -65,7 +65,7 @@ julia --project -e 'using MPI; using CUDA; CUDA.precompile_runtime()'
 # 2. Update packages to the environment that we need to use. not always necessary
 julia --project -e 'using Pkg; Pkg.add("MPI"); Pkg.add("MPIPreferences"); Pkg.add("CUDA"); Pkg.add("Oceananigans"); Pkg.add("Printf")'
 # Finally, let's run this thing
-mpiexec -n 1 ./launch.sh julia --project oceananigans.jl
+mpiexec --ppn 1 ./launch.sh julia --project oceananigans.jl
 EXEC
 
 qsub < EXEC_STEP

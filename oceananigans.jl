@@ -34,7 +34,7 @@ mutable struct Params
 end
 
 #defaults, these can be changed directly below 128, 128, 160, 320.0, 320.0, 96.0
-p = Params(400, 400, 400, 320.0, 320.0, 96.0, 5.3e-9, 33.0, 0.0, 4200.0, 1000.0, 0.01, 17.0, 2.0e-4, 5.75, 0.3)
+p = Params(384, 384, 384, 320.0, 320.0, 96.0, 5.3e-9, 33.0, 0.0, 4200.0, 1000.0, 0.01, 17.0, 2.0e-4, 5.75, 0.3)
 # Determine architecture based on number of MPI ranks
 Nranks = MPI.Comm_size(MPI.COMM_WORLD)
 arch = Nranks > 1 ? Distributed(GPU()) : GPU()
@@ -50,8 +50,9 @@ grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
 include("stokes.jl")
 
 #stokes drift
-const z_d = collect(-p.Lz + grid.z.Δᵃᵃᶜ/2 : grid.z.Δᵃᵃᶜ : -grid.z.Δᵃᵃᶜ/2)
-const dudz = dstokes_dz(z_d, p.u₁₀)
+const z_d = range(-p.Lz + grid.z.Δᵃᵃᶜ/2, stop = -grid.z.Δᵃᵃᶜ/2, step = grid.z.Δᵃᵃᶜ)
+const dudz_cpu = dstokes_dz(z_d, p.u₁₀)  # Runs on CPU, returns Vector{Float64}
+const dudz_gpu = CUDA.CuArray(dudz_cpu)  # Explicitly move to GPU
 new_dUSDdz = Field{Nothing, Nothing, Center}(grid)
 set!(new_dUSDdz, reshape(dudz, 1, 1, :))
 
@@ -116,8 +117,6 @@ function progress(sim)
 end
 
 simulation.callbacks[:progress] = Callback(progress, IterationInterval(20))
-include("num_check.jl")
-simulation.callbacks[:nan_checker] = Callback(num_check, IterationInterval(1)) #Callback(NaNChecker(fields_to_output, true), IterationInterval(1))
 
 setup_end = time()
 # MPI.Barrier()
