@@ -79,10 +79,8 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
 
 # random seed
 noise_array = randn(size(grid))
-
-zC = interior(grid.zC)
 for k in 1:p.Nz
-    noise_array[:, :, k] .*= exp(zC[k] / 4)
+    noise_array[:, :, k] .*= exp(z_d[k] / 4)
 end
 
 # Create and set field
