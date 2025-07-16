@@ -1,8 +1,8 @@
 #!/bin/bash
 
-jobn=1024_128nodes
-nodes=128
-cpus=128
+jobn=1024_16nodes
+nodes=16
+cpus=64
 gpus=1
 ntasks=$((nodes*gpus))
 rm -rf outputs/$jobn
@@ -13,7 +13,7 @@ cp stokes.jl outputs/$jobn/
 cp num_check.jl outputs/$jobn/
 echo '---> Directory Made'
 
-cd $jobn/
+cd outputs/$jobn/
 
 cat > EXEC_STEP << EXEC
 #!/bin/sh
