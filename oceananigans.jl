@@ -86,10 +86,10 @@ rng = Xoshiro(1234 + rank)
 Ξ(x, y, z) = randn(rng) * exp(z/4)
 
 Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)
-uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
-wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
+#uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
+#wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
-set!(model, u=uᵢ, w=wᵢ, T=Tᵢ)
+set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
 simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
