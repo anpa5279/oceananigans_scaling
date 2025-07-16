@@ -48,8 +48,8 @@ include("stokes.jl")
 
 #stokes drift
 dusdz = Field{Center, Center, Center}(grid)
-Nx_local, Ny_local, Nz_local = size(dusdz)
-z1d = grid.z.cᵃᵃᶜ[1:Nz_local]
+z_indices = axes(dusdz, 3)
+z1d = getindex.(Ref(grid.z.cᵃᵃᶜ), z_indices)
 dusdz_1d = dstokes_dz.(z1d, u₁₀)
 set!(dusdz, dusdz_1d)
 us = Field{Center, Center, Center}(grid)
