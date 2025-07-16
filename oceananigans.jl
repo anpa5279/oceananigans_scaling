@@ -53,13 +53,14 @@ z_indices = axes(dusdz, 3)
 z1d = getindex.(Ref(grid.z.cᵃᵃᶜ), z_indices)
 dusdz_1d = dstokes_dz.(z1d, u₁₀)
 set!(dusdz, dusdz_1d)
+fill_halo_regions!(dusdz)
 us = stokes_velocity(z1d[end], u₁₀)
 @show dusdz
-fill_halo_regions!(dusdz)
 
 #@show dusdz
 
 u_f = La_t^2 * us
+@show u_f
 τx = -(u_f^2) #τx = -3.72e-5# -(u_f^2)
 u_f = sqrt(abs(τx))
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
@@ -81,11 +82,11 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
 @show model
 
 # random seed
-rng = Xoshiro(1234 + rank)
+#rng = Xoshiro(1234 + rank)
 
-Ξ(x, y, z) = randn(rng) * exp(z/4)
+#Ξ(x, y, z) = randn(rng) * exp(z/4)
 
-Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)
+Tᵢ(x,y,z) = T0 - dTdz * (z + initial_mixed_layer_depth)#Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)
 #uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 #wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
