@@ -52,14 +52,13 @@ z_indices = axes(dusdz, 3)
 z1d = getindex.(Ref(grid.z.cᵃᵃᶜ), z_indices)
 dusdz_1d = dstokes_dz.(z1d, u₁₀)
 set!(dusdz, dusdz_1d)
-us = Field{Center, Center, Center}(grid)
-us_1d = stokes_velocity.(z1d, u₁₀)
-set!(us, us_1d)
+us = stokes_velocity(z1d[end], u₁₀)
 @show dusdz
+fill_halo_regions!(dusdz)
 
 #@show dusdz
 
-u_f = La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, u₁₀)[1])
+u_f = La_t^2 * us
 τx = -(u_f^2) #τx = -3.72e-5# -(u_f^2)
 u_f = sqrt(abs(τx))
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
