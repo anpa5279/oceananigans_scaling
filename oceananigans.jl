@@ -47,16 +47,15 @@ grid = RectilinearGrid(arch; size=(Nx, Ny, Nz), extent=(Lx, Ly, Lz))
 include("stokes.jl")
 
 #stokes drift
-us = Field{Nothing, Nothing, Center}(grid)
-set!(us) do i, j, k
-    z = znode(dusdz, i, j, k)
-    stokes_velocity(z, u₁₀)
-end
+z1d = grid.z.cᵃᵃᶜ
 dusdz = Field{Nothing, Nothing, Center}(grid)
-set!(dusdz) do i, j, k
-    z = znode(dusdz, i, j, k)
-    dstokes_dz(z, u₁₀)
-end
+dusdz_local = cat(dstokes_dz.(z1d[1:Nz], u₁₀), dims=3)
+set!(dusdz, dusdz_local)
+us = Field{Nothing, Nothing, Center}(grid)
+us_local = cat(stokes_velocity.(z1d[1:Nz], u₁₀), dims=3)
+set!(us, us_local)
+@show dusdz
+
 #@show dusdz
 
 u_f = La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, u₁₀)[1])
