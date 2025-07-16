@@ -47,13 +47,14 @@ grid = RectilinearGrid(arch; size=(Nx, Ny, Nz), extent=(Lx, Ly, Lz))
 include("stokes.jl")
 
 #stokes drift
-z1d = grid.z.cᵃᵃᶜ
 dusdz = Field{Nothing, Nothing, Center}(grid)
-dusdz_local = cat(dstokes_dz.(z1d[1:Nz], u₁₀), dims=3)
-set!(dusdz, dusdz_local)
+Nx_local, Ny_local, Nz_local = size(dusdz)
+z1d = grid.z.cᵃᵃᶜ[1:Nz_local]
+dusdz_1d = dstokes_dz.(z1d, u₁₀)
+set!(dusdz, dusdz_1d)
 us = Field{Nothing, Nothing, Center}(grid)
-us_local = cat(stokes_velocity.(z1d[1:Nz], u₁₀), dims=3)
-set!(us, us_local)
+us_1d = stokes_velocity.(z1d, u₁₀)
+set!(us, us_1d)
 @show dusdz
 
 #@show dusdz
