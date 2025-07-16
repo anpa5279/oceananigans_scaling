@@ -14,27 +14,24 @@ using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
 
 setup_start = time()
-mutable struct Params
-    Nx::Int         # number of points in each of x direction
-    Ny::Int         # number of points in each of y direction
-    Nz::Int         # number of points in the vertical direction
-    Lx::Float64     # (m) domain horizontal extents
-    Ly::Float64     # (m) domain horizontal extents
-    Lz::Float64     # (m) domain depth 
-    N²::Float64     # s⁻², initial and bottom buoyancy gradient
-    initial_mixed_layer_depth::Float64 # m 
-    Q::Float64      # W m⁻², surface heat flux. cooling is positive
-    cᴾ::Float64     # J kg⁻¹ K⁻¹, specific heat capacity of seawater
-    ρₒ::Float64     # kg m⁻³, average density at the surface of the world ocean
-    dTdz::Float64   # K m⁻¹, temperature gradient
-    T0::Float64     # C, temperature at the surface   
-    β::Float64      # 1/K, thermal expansion coefficient
-    u₁₀::Float64    # (m s⁻¹) wind speed at 10 meters above the ocean
-    La_t::Float64   # Langmuir turbulence number
-end
+const Nx = 128        # number of points in each of x direction
+const Ny = 128        # number of points in each of y direction
+const Nz = 128        # number of points in the vertical direction
+const Lx = 320    # (m) domain horizontal extents
+const Ly = 320    # (m) domain horizontal extents
+const Lz = 96    # (m) domain depth 
+const N² = 5.3e-9    # s⁻², initial and bottom buoyancy gradient
+const initial_mixed_layer_depth = 30.0 # m 
+const Q = 0.0     # W m⁻², surface heat flux. cooling is positive
+const cᴾ = 4200.0    # J kg⁻¹ K⁻¹, specific heat capacity of seawater
+const ρₒ = 1026.0    # kg m⁻³, average density at the surface of the world ocean
+const dTdz = 0.01  # K m⁻¹, temperature gradient
+const T0 = 25.0    # C, temperature at the surface  
+const S0 = 35.0    # ppt, salinity 
+const β = 2.0e-4     # 1/K, thermal expansion coefficient
+const u₁₀ = 5.75   # (m s⁻¹) wind speed at 10 meters above the ocean
+const La_t = 0.3  # Langmuir turbulence number
 
-#defaults, these can be changed directly below 128, 128, 160, 320.0, 320.0, 96.0
-p = Params(384, 384, 384, 320.0, 320.0, 96.0, 5.3e-9, 33.0, 0.0, 4200.0, 1000.0, 0.01, 17.0, 2.0e-4, 5.75, 0.3)
 # Determine architecture based on number of MPI ranks
 Nranks = MPI.Comm_size(MPI.COMM_WORLD)
 arch = Nranks > 1 ? Distributed(GPU()) : GPU()
@@ -45,7 +42,7 @@ Nranks = arch isa Distributed ? MPI.Comm_size(arch.communicator) : 1
 
 println("Hello from process $rank out of $Nranks")
 
-grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
+grid = RectilinearGrid(arch; size=(Nx, Ny, Nz), extent=(Lx, Ly, Lz))
 
 include("stokes.jl")
 
@@ -56,7 +53,7 @@ dusdz = Field{Nothing, Nothing, Center}(grid)
 set!(dusdz, z -> dstokes_dz(z, u₁₀))
 #@show dusdz
 
-u_f = p.La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, p.u₁₀)[1])
+u_f = La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, u₁₀)[1])
 τx = -(u_f^2) #τx = -3.72e-5# -(u_f^2)
 u_f = sqrt(abs(τx))
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
@@ -65,7 +62,7 @@ u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
 buoyancy = SeawaterBuoyancy(equation_of_state=LinearEquationOfState(thermal_expansion = 2e-4), constant_salinity = 35.0)
 #@show buoyancy
 T_bcs = FieldBoundaryConditions(top = GradientBoundaryCondition(0.0),
-                                bottom = GradientBoundaryCondition(p.dTdz))
+                                bottom = GradientBoundaryCondition(dTdz))
 coriolis = FPlane(f=1e-4) # s⁻¹
 
 model = NonhydrostaticModel(; grid, buoyancy, coriolis,
@@ -76,12 +73,6 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
                             stokes_drift = UniformStokesDrift(∂z_uˢ=new_dUSDdz),
                             boundary_conditions = (u=u_bcs, T=T_bcs))
 @show model
-
-# random seed
-noise_array = randn(size(grid))
-for k in 1:p.Nz
-    noise_array[:, :, k] .*= exp(z_d[k] / 4)
-end
 
 # random seed
 r_xy(a) = randn(Xoshiro(1234), 3 * Nx)[Int(1 + round((Nx) * a/(Lx + grid.Δxᶜᵃᵃ)))]
