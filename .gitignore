@@ -1,5 +1,5 @@
 .DS_Store
-outputs/
+outputs/*
 data/
 *.tar.gz
 test_runs/
@@ -8,4 +8,3 @@ test_runs/
 *.jld2
 scaling.o*
 test.o*
-scaling.o93*

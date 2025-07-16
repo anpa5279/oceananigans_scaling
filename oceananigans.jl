@@ -50,20 +50,20 @@ grid = RectilinearGrid(arch; size=(p.Nx, p.Ny, p.Nz), extent=(p.Lx, p.Ly, p.Lz))
 include("stokes.jl")
 
 #stokes drift
-const z_d = range(-p.Lz + grid.z.Δᵃᵃᶜ/2, stop = -grid.z.Δᵃᵃᶜ/2, step = grid.z.Δᵃᵃᶜ)
-const dudz_cpu = dstokes_dz(z_d, p.u₁₀)  # Runs on CPU, returns Vector{Float64}
-const dudz_gpu = CUDA.CuArray(dudz_cpu)  # Explicitly move to GPU
-new_dUSDdz = Field{Nothing, Nothing, Center}(grid)
-set!(new_dUSDdz, reshape(dudz_gpu, 1, 1, :))
+us = Field{Nothing, Nothing, Center}(grid)
+set!(us, z -> stokes_velocity(z, u₁₀))
+dusdz = Field{Nothing, Nothing, Center}(grid)
+set!(dusdz, z -> dstokes_dz(z, u₁₀))
+#@show dusdz
 
 u_f = p.La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, p.u₁₀)[1])
 τx = -(u_f^2) #τx = -3.72e-5# -(u_f^2)
 u_f = sqrt(abs(τx))
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
-@show u_bcs
+#@show u_bcs
 
 buoyancy = SeawaterBuoyancy(equation_of_state=LinearEquationOfState(thermal_expansion = 2e-4), constant_salinity = 35.0)
-@show buoyancy
+#@show buoyancy
 T_bcs = FieldBoundaryConditions(top = GradientBoundaryCondition(0.0),
                                 bottom = GradientBoundaryCondition(p.dTdz))
 coriolis = FPlane(f=1e-4) # s⁻¹
@@ -83,13 +83,12 @@ for k in 1:p.Nz
     noise_array[:, :, k] .*= exp(z_d[k] / 4)
 end
 
-# Create and set field
-Ξ_field = Field(Center, Center, Center, grid)
-set!(Ξ_field, noise_array)
-@show "rand equations made"
-Tᵢ(x, y, z) = z > - p.initial_mixed_layer_depth ? p.T0 : p.T0 + p.dTdz * (z + p.initial_mixed_layer_depth)+ p.dTdz * model.grid.Lz * 1e-6 * r_z(z) * r_xy(y) * r_xy(x + p.Lx)
-uᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + p.Lx)
-wᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + p.Lx)
+# random seed
+r_xy(a) = randn(Xoshiro(1234), 3 * Nx)[Int(1 + round((Nx) * a/(Lx + grid.Δxᶜᵃᵃ)))]
+r_z(z) = randn(Xoshiro(1234), Nz +1)[Int(1 + round((Nz) * z/(-Lz)))] * exp(z/4)
+Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * r_z(z) * r_xy(y) * r_xy(x + Lx)
+uᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + Lx)
+wᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + Lx)
 @show "equations defined"
 set!(model, u=uᵢ, w=wᵢ, T=Tᵢ)
 simulation = Simulation(model, Δt=30.0, stop_time = 4hours) #stop_time = 96hours,
