@@ -53,7 +53,6 @@ z_indices = axes(dusdz, 3)
 z1d = getindex.(Ref(grid.z.cᵃᵃᶜ), z_indices)
 dusdz_1d = dstokes_dz.(z1d, u₁₀)
 set!(dusdz, dusdz_1d)
-fill_halo_regions!(dusdz)
 us = stokes_velocity(z1d[end], u₁₀)
 @show dusdz
 
@@ -91,6 +90,12 @@ Tᵢ(x,y,z) = T0 - dTdz * (z + initial_mixed_layer_depth)#Tᵢ(x, y, z) = z > - 
 #wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
 set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
+# After set! calls:
+fill_halo_regions!(dusdz)
+fill_halo_regions!(model.velocities.u)
+fill_halo_regions!(model.velocities.v)
+fill_halo_regions!(model.velocities.w)
+fill_halo_regions!(model.tracers.T)
 simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
