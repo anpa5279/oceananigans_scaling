@@ -14,9 +14,9 @@ using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
 
 setup_start = time()
-const Nx = 128        # number of points in each of x direction
-const Ny = 128        # number of points in each of y direction
-const Nz = 128        # number of points in the vertical direction
+const Nx = 1024        # number of points in each of x direction
+const Ny = 1024        # number of points in each of y direction
+const Nz = 1024        # number of points in the vertical direction
 const Lx = 320    # (m) domain horizontal extents
 const Ly = 320    # (m) domain horizontal extents
 const Lz = 96    # (m) domain depth 
@@ -48,9 +48,15 @@ include("stokes.jl")
 
 #stokes drift
 us = Field{Nothing, Nothing, Center}(grid)
-set!(us, z -> stokes_velocity(z, u₁₀))
+set!(us) do i, j, k
+    z = znode(dusdz, i, j, k)
+    stokes_velocity(z, u₁₀)
+end
 dusdz = Field{Nothing, Nothing, Center}(grid)
-set!(dusdz, z -> dstokes_dz(z, u₁₀))
+set!(dusdz) do i, j, k
+    z = znode(dusdz, i, j, k)
+    dstokes_dz(z, u₁₀)
+end
 #@show dusdz
 
 u_f = La_t^2 * (stokes_velocity(-grid.z.Δᵃᵃᶜ/2, u₁₀)[1])
@@ -75,14 +81,16 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
 @show model
 
 # random seed
-r_xy(a) = randn(Xoshiro(1234), 3 * Nx)[Int(1 + round((Nx) * a/(Lx + grid.Δxᶜᵃᵃ)))]
-r_z(z) = randn(Xoshiro(1234), Nz +1)[Int(1 + round((Nz) * z/(-Lz)))] * exp(z/4)
-Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * r_z(z) * r_xy(y) * r_xy(x + Lx)
-uᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + Lx)
-wᵢ(x, y, z) = u_f * 1e-1 * r_z(z) * r_xy(y) * r_xy(x + Lx)
+rng = Xoshiro(1234 + rank)
+
+Ξ(x, y, z) = randn(rng) * exp(z/4)
+
+Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)
+uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
+wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
 set!(model, u=uᵢ, w=wᵢ, T=Tᵢ)
-simulation = Simulation(model, Δt=30.0, stop_time = 4hours) #stop_time = 96hours,
+simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
 
