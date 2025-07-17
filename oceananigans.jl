@@ -86,10 +86,10 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
 #Ξ(x, y, z) = randn(rng) * exp(z/4)
 
 Tᵢ(x,y,z) = T0 - dTdz * (z + initial_mixed_layer_depth)#Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)
-#uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
-#wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
+uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
+wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
-set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
+set!(model, u=uᵢ, w=wᵢ,T=Tᵢ) #u=uᵢ, w=wᵢ, 
 # After set! calls:
 fill_halo_regions!(dusdz)
 fill_halo_regions!(model.velocities.u)
