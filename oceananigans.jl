@@ -12,7 +12,7 @@ using Oceananigans.Models: NaNChecker
 using Oceananigans.DistributedComputations
 using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
-#import Oceananigans.BoundaryConditions: #fill_halo_regions!
+import Oceananigans.BoundaryConditions: fill_halo_regions!
 
 setup_start = time()
 const Nx = 512        # number of points in each of x direction
