@@ -15,9 +15,9 @@ using Oceananigans.BuoyancyFormulations: g_Earth
 import Oceananigans.BoundaryConditions: fill_halo_regions!
 
 setup_start = time()
-const Nx = 512        # number of points in each of x direction
-const Ny = 512        # number of points in each of y direction
-const Nz = 512        # number of points in the vertical direction
+const Nx = 128        # number of points in each of x direction
+const Ny = 128        # number of points in each of y direction
+const Nz = 128        # number of points in the vertical direction
 const Lx = 320    # (m) domain horizontal extents
 const Ly = 320    # (m) domain horizontal extents
 const Lz = 96    # (m) domain depth 
