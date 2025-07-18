@@ -15,9 +15,9 @@ using Oceananigans.BuoyancyFormulations: g_Earth
 import Oceananigans.BoundaryConditions: fill_halo_regions!
 
 setup_start = time()
-const Nx = 128        # number of points in each of x direction
-const Ny = 128        # number of points in each of y direction
-const Nz = 128        # number of points in the vertical direction
+const Nx = 512        # number of points in each of x direction
+const Ny = 512        # number of points in each of y direction
+const Nz = 512        # number of points in the vertical direction
 const Lx = 320    # (m) domain horizontal extents
 const Ly = 320    # (m) domain horizontal extents
 const Lz = 96    # (m) domain depth 
@@ -81,15 +81,15 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
 @show model
 
 # random seed
-rng = Xoshiro(1234 + rank)
+#rng = Xoshiro(1234 + rank)
 
-Ξ(x, y, z) = randn(rng) * exp(z/4)
+#Ξ(x, y, z) = randn(rng) * exp(z/4)
 
 Tᵢ(x,y,z) = T0 - dTdz * (z + initial_mixed_layer_depth)#Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)
-uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
-wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
+#uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
+#wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
-set!(model, u=uᵢ, w=wᵢ,T=Tᵢ) #u=uᵢ, w=wᵢ, 
+set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
 # After set! calls:
 fill_halo_regions!(dusdz)
 fill_halo_regions!(model.velocities.u)
