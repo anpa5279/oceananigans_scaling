@@ -90,12 +90,6 @@ uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
 set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
-# After set! calls:
-fill_halo_regions!(dusdz)
-fill_halo_regions!(model.velocities.u)
-fill_halo_regions!(model.velocities.v)
-fill_halo_regions!(model.velocities.w)
-fill_halo_regions!(model.tracers.T)
 simulation = Simulation(model, Δt=15.0, stop_time = 0.5hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
