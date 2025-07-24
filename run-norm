@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jobn=512_8nodes_noICvel
+jobn=512_8nodes_iter1
 nodes=8
 cpus=64
 gpus=1
