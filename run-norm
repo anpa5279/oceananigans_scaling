@@ -1,9 +1,9 @@
 #!/bin/bash
 
-jobn=128_512_512_4node_1gpus_randn_asis
-nodes=1
+jobn=512_4nodes_1gpus_sdt
+nodes=4
 cpus=64
-gpus=4
+gpus=1
 ntasks=$((nodes*gpus))
 rm -rf outputs/$jobn
 mkdir outputs/$jobn
