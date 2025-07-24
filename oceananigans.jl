@@ -83,7 +83,7 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
 # random seed
 #rng = Xoshiro() 
 
-Ξ(x, y, z) = randn(Xoshiro()) * exp(z/4)
+Ξ(x, y, z) = randn() * exp(z/4)
 
 Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)#Tᵢ(x,y,z) = T0 - dTdz * (z + initial_mixed_layer_depth)#
 #uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
