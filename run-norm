@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jobn=512_512_128_4node_1gpus_randn_asis
+jobn=128_512_512_4node_1gpus_randn_asis
 nodes=1
 cpus=64
 gpus=4
