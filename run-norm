@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jobn=512_4nodes_1gpus_sdt
+jobn=512_1nodes_4gpus_sdt
 nodes=4
 cpus=64
 gpus=1
