@@ -91,6 +91,13 @@ wall_clock = Ref(time_ns())
 
 conjure_time_step_wizard!(simulation, IterationInterval(1); cfl=0.5, max_Δt=30seconds)
 
+#saving outputs
+function save_IC!(file, model)
+    file["IC/friction_velocity"] = u_f
+    file["IC/stokes_velocity"] = stokes_velocity(-grid.z.Δᵃᵃᶜ/2, u₁₀)[1]
+    file["IC/wind_speed"] = u₁₀
+    return nothing
+end
 output_interval = 5minutes
 
 u, v, w = model.velocities
