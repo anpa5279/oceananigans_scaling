@@ -1,7 +1,7 @@
 #!/bin/bash
 
-jobn=perform600-3
-nodes=1
+jobn=1024_2nodes
+nodes=2
 cpus=64
 gpus=1
 ntasks=$((nodes*gpus))
