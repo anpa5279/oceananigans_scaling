@@ -85,13 +85,13 @@ set!(model, u=uᵢ, v=vᵢ, T=Tᵢ)
 
 @show "equations defined"
 set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
-simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96hours,
+simulation = Simulation(model, Δt=30.0, stop_time = 10minutes) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
 
 conjure_time_step_wizard!(simulation, IterationInterval(1); cfl=0.5, max_Δt=30seconds)
 
-output_interval = 10minutes
+output_interval = 5minutes
 
 u, v, w = model.velocities
 T = model.tracers.T
