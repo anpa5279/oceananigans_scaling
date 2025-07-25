@@ -95,8 +95,6 @@ simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96ho
 wall_clock = Ref(time_ns())
 
 conjure_time_step_wizard!(simulation, IterationInterval(1); cfl=0.5, max_Δt=30seconds)
-#wizard = TimeStepWizard(; cfl=0.5, max_Δt=30seconds)
-#simulation.callbacks[:time_step_wizard] = Callback(wizard, IterationInterval(1))
 
 output_interval = 10minutes
 
@@ -107,16 +105,19 @@ simulation.output_writers[:fields] = JLD2Writer(model, fields_to_output,
                                                       filename = "scaling_test_fields_$(rank).jld2",
                                                       overwrite_existing = true)
 wall_clock = Ref(time_ns())
-function progress(sim)
-    elapsed = 1e-9 * (time_ns() - wall_clock[])
+function progress(simulation)
+    u, v, w = simulation.model.velocities
 
-    msg = @sprintf("iteration: %d, time: %s, wall time: %s, max|w|: %6.3e, m s⁻¹\n",
-                   iteration(sim), prettytime(sim), prettytime(elapsed),
-                   maximum(abs, sim.model.velocities.w))
-
-    wall_clock[] = time_ns()
+    # Print a progress message
+    msg = @sprintf("i: %04d, t: %s, Δt: %s, umax = (%.1e, %.1e, %.1e) ms⁻¹, wall time: %s\n",
+                   iteration(simulation),
+                   prettytime(time(simulation)),
+                   prettytime(simulation.Δt),
+                   maximum(abs, u), maximum(abs, v), maximum(abs, w),
+                   prettytime(simulation.run_wall_time))
 
     @info msg
+
 
     return nothing
 end

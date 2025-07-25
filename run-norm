@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jobn=512_4nodes_1gpus_cfl1
+jobn=512_4nodes_1gpus
 nodes=4
 cpus=64
 gpus=1
@@ -23,7 +23,7 @@ cat > EXEC_STEP << EXEC
 #PBS -q main
 #PBS -j oe
 #PBS -l job_priority=economy
-#PBS -l walltime=3:10:00
+#PBS -l walltime=00:30:00
 #PBS -l select=$nodes:ncpus=$cpus:mpiprocs=$gpus:ngpus=$gpus
 #PBS -l gpu_type=a100
 # Use moar processes for precompilation to speed things up
