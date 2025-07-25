@@ -15,7 +15,7 @@ using Oceananigans.BuoyancyFormulations: g_Earth
 import Oceananigans.BoundaryConditions: fill_halo_regions!
 
 setup_start = time()
-const Nx = 128        # number of points in each of x direction
+const Nx = 512        # number of points in each of x direction
 const Ny = 512        # number of points in each of y direction
 const Nz = 512        # number of points in the vertical direction
 const Lx = 320    # (m) domain horizontal extents
@@ -90,11 +90,11 @@ uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
 set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
-simulation = Simulation(model, Δt=15.0, stop_time = 0.5hours) #stop_time = 96hours,
+simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96hours,
 @show simulation
 wall_clock = Ref(time_ns())
 
-conjure_time_step_wizard!(simulation, cfl=0.5, max_Δt=30seconds)
+conjure_time_step_wizard!(simulation, schedule=IterationInterval(1); cfl=0.5, max_Δt=30seconds)
 
 
 output_interval = 10minutes
