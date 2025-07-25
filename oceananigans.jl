@@ -94,8 +94,9 @@ simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96ho
 @show simulation
 wall_clock = Ref(time_ns())
 
-conjure_time_step_wizard!(simulation, schedule=IterationInterval(1); cfl=0.5, max_Δt=30seconds)
-
+conjure_time_step_wizard!(simulation, schedule=IterationInterval(1), cfl=0.5, max_Δt=30seconds)
+#wizard = TimeStepWizard(; cfl=0.5, max_Δt=30seconds)
+#simulation.callbacks[:time_step_wizard] = Callback(wizard, IterationInterval(1))
 
 output_interval = 10minutes
 
