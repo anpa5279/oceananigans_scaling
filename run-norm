@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jobn=perform640-3
+jobn=perform544-3
 nodes=1
 cpus=64
 gpus=1
