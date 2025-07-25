@@ -8,11 +8,9 @@ using Random
 using Statistics
 using Printf
 using Oceananigans
-using Oceananigans.Models: NaNChecker
 using Oceananigans.DistributedComputations
 using Oceananigans.Units: minute, minutes, hours, seconds
 using Oceananigans.BuoyancyFormulations: g_Earth
-import Oceananigans.BoundaryConditions: fill_halo_regions!
 
 setup_start = time()
 const Nx = 512        # number of points in each of x direction
@@ -56,18 +54,16 @@ set!(dusdz, dusdz_1d)
 us = stokes_velocity(z1d[end], u₁₀)
 @show dusdz
 
-#@show dusdz
-
+#BCs
 u_f = La_t^2 * us
 @show u_f
-τx = -(u_f^2) #τx = -3.72e-5# -(u_f^2)
+τx = -(u_f^2) #τx = -3.72e-5
 u_f = sqrt(abs(τx))
 u_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(τx))
-#@show u_bcs
 
 buoyancy = SeawaterBuoyancy(equation_of_state=LinearEquationOfState(thermal_expansion = 2e-4), constant_salinity = 35.0)
 #@show buoyancy
-T_bcs = FieldBoundaryConditions(top = GradientBoundaryCondition(0.0),
+T_bcs = FieldBoundaryConditions(top = FluxBoundaryCondition(Q / (cᴾ * ρₒ * Lx * Ly)),
                                 bottom = GradientBoundaryCondition(dTdz))
 coriolis = FPlane(f=1e-4) # s⁻¹
 
@@ -75,19 +71,18 @@ model = NonhydrostaticModel(; grid, buoyancy, coriolis,
                             advection = WENO(),
                             timestepper = :RungeKutta3,
                             tracers = (:T),
-                            closure = AnisotropicMinimumDissipation(),
+                            closure = Smagorinsky(coefficient=0.1),
                             stokes_drift = UniformStokesDrift(∂z_uˢ=dusdz),
                             boundary_conditions = (u=u_bcs, T=T_bcs))
 @show model
 
-# random seed
-#rng = Xoshiro() 
+# ICs
+r_z(z) = randn(Xoshiro()) * exp(z/4)
+Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * r_z(z) 
+uᵢ(x, y, z) = u_f * 1e-1 * r_z(z) 
+vᵢ(x, y, z) = -u_f * 1e-1 * r_z(z) 
+set!(model, u=uᵢ, v=vᵢ, T=Tᵢ)
 
-Ξ(x, y, z) = randn() * exp(z/4)
-
-Tᵢ(x, y, z) = z > - initial_mixed_layer_depth ? T0 : T0 + dTdz * (z + initial_mixed_layer_depth)+ dTdz * model.grid.Lz * 1e-6 * Ξ(x, y, z)#Tᵢ(x,y,z) = T0 - dTdz * (z + initial_mixed_layer_depth)#
-uᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
-wᵢ(x, y, z) = u_f * 1e-1 * Ξ(x, y, z)
 @show "equations defined"
 set!(model, T=Tᵢ) #u=uᵢ, w=wᵢ, 
 simulation = Simulation(model, Δt=30.0, stop_time = 0.5hours) #stop_time = 96hours,
@@ -98,12 +93,27 @@ conjure_time_step_wizard!(simulation, IterationInterval(1); cfl=0.5, max_Δt=30s
 
 output_interval = 10minutes
 
-fields_to_output = merge(model.velocities, model.tracers)
+u, v, w = model.velocities
+T = model.tracers.T
+W = Average(w, dims=(1, 2))
+U = Average(u, dims=(1, 2))
+V = Average(v, dims=(1, 2))
 
-simulation.output_writers[:fields] = JLD2Writer(model, fields_to_output,
-                                                      schedule = TimeInterval(output_interval),
-                                                      filename = "scaling_test_fields_$(rank).jld2",
-                                                      overwrite_existing = true)
+simulation.output_writers[:fields] = JLD2Writer(model, (; u, v, w, T),
+                                                    schedule = TimeInterval(output_interval),
+                                                    filename = "fields.jld2", #$(rank)
+                                                    overwrite_existing = true,
+                                                    init = save_IC!)
+
+W = Average(w, dims=(1, 2))
+U = Average(u, dims=(1, 2))
+V = Average(v, dims=(1, 2))
+T = Average(T, dims=(1, 2))
+                                                      
+simulation.output_writers[:averages] = JLD2Writer(model, (; U, V, W, T),
+                                                    schedule = AveragedTimeInterval(output_interval, window=output_interval),
+                                                    filename = "averages.jld2",
+                                                    overwrite_existing = true)
 wall_clock = Ref(time_ns())
 function progress(simulation)
     u, v, w = simulation.model.velocities
@@ -122,7 +132,7 @@ function progress(simulation)
     return nothing
 end
 
-simulation.callbacks[:progress] = Callback(progress, IterationInterval(1))
+simulation.callbacks[:progress] = Callback(progress, IterationInterval(10))
 #include("nan-check.jl")
 #simulation.callbacks[:nan_checker] = Callback(num_check, IterationInterval(1)) #Callback(NaNChecker(fields_to_output, true), IterationInterval(1))
 
