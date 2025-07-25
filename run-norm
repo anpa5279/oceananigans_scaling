@@ -1,7 +1,7 @@
 #!/bin/bash
 
-jobn=1024_4nodes
-nodes=4
+jobn=1024_8nodes
+nodes=8
 cpus=64
 gpus=1
 ntasks=$((nodes*gpus))
