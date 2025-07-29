@@ -1,16 +1,15 @@
 #!/bin/bash
 
-jobn=1024_4nodes
-nodes=2
+jobn=perform4_512-3
+nodes=1
 cpus=64
-gpus=1
+gpus=4
 ntasks=$((nodes*gpus))
 rm -rf outputs/$jobn
 mkdir outputs/$jobn
 
 cp oceananigans.jl outputs/$jobn/
 cp stokes.jl outputs/$jobn/
-cp num_check.jl outputs/$jobn/
 echo '---> Directory Made'
 
 cd outputs/$jobn/
