@@ -1,7 +1,7 @@
 #!/bin/bash
 
-jobn=strong4-n9
-nodes=9
+jobn=strong4-n12
+nodes=12
 cpus=64
 gpus=4
 ntasks=$((nodes*gpus))
